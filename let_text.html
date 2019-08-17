@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   //函数传入两个数字，例2235和4211
+    //检索两个数字对应的位数里的数字是否相同
+   var num=0;
+    function sort_num(a,b) {
+        let a1=a+"";
+        let b1=b+"";
+        for(let x in a1){
+            if(a1[x]===b1[x])
+                num++;
+        }
+    }
+    sort_num(2210,4211)
+   console.log(num)
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Number() {
+        getNumber=function () {
+            alert(0)
+        }
+        return this;
+    }
+    Number.getNumber=function () {
+        alert(1)
+    }
+    Number.prototype.getNumber=function () {
+        alert(2)
+    }
+    var getNumber=function () {
+        alert(3)
+    }
+    function getNumber() {
+        alert(4)
+    }
+    Number.getNumber();//1
+    getNumber();//3
+    Number().getNumber();//(0)
+    getNumber();//(0)
+    new Number.getNumber();//(1)
+    new Number().getNumber();//2
+    new new Number().getNumber();//(2)
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<script type="text/javascript">
+	{
+			let xx={
+				a:"AAA",
+				b:1
+			};
+			Object.defineProperty(xx,"c",{
+				get:function(){
+					return this.b
+				},
+				set:function(_n){
+					this.b += _n;	
+				}	
+			})
+			xx.c=3;
+			console.log(xx.c)
+	}
+</script>

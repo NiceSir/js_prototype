@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单点击button获取哪个button点击</title>
+</head>
+<body>
+<form action="" class="form" name="form" onsubmit="return handler()">
+    <input type="button" name="button" value="button1">
+    <input type="button" name="button" value="button2">
+    <input type="button" name="button" value="button3">
+    <input type="button" name="button" value="button4">
+</form>
+<script>
+    var selectIndex=document.querySelectorAll("input");
+    var form_dom= document.querySelector("form");
+    var s="";
+    function inputHandler(e) {
+
+        document.form.submit();
+    }
+    for (let x=0,length=selectIndex.length;x<length;x++){
+        selectIndex[x].onclick=(function (e) {
+            console.log(e.target.value);
+            s=e.target.value;
+            inputHandler(s)
+        });
+    }
+
+</script>
+</body>
+</html>

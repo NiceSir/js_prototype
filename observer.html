@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //发布者
+    var pub={
+        public:function () {
+            _observer.methods();
+        }
+    };
+
+    //订阅者
+    var sub1={
+        Update:function () {
+            console.log("sub1")
+        }};
+    var sub2={
+        Update:function () {
+            console.log("sub2")
+        }};
+    var sub3={
+        Update:function () {
+            console.log("sub3")
+        }};
+
+    //关系，依赖
+    function Observer() {//首字母必须大写
+        this.subs=[sub1,sub2,sub3];
+    }
+
+    //添加依赖的方法
+    Observer.prototype.methods=function () {
+        let _subs=this.subs;
+        for(let _sub of _subs){
+            _sub.Update();
+        }
+    }
+
+    //创建依赖的实例
+    var _observer=new Observer();
+
+    //发布者发布
+    pub.public();
+</script>
+</body>
+</html>
